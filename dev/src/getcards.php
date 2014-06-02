@@ -1,7 +1,8 @@
 <?php 
 
-$db = new PDO('mysql:host=localhost;dbname=thestrat_cards;charset=utf8', 'thestrat_weapon', '294226MWoH');
-$query = $db->query("SELECT * FROM thestrat_cards.catalogue ORDER BY thestrat_cards.catalogue.id");
+/* I've replaced these. You will need to put your own values here. */
+$db = new PDO('mysql:host=host;dbname=databasename;charset=utf8', 'username', 'password');
+$query = $db->query("SELECT * FROM cardstableindatabase ORDER BY cardstableindatabase.id");
 $results = $query->fetchAll(PDO::FETCH_ASSOC);
 
 $newResults = array();
