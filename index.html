@@ -1,0 +1,696 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Marvel War of Heroes Battle Simulator</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script>
+	var HD = true;
+</script>
+<script data-main="src/app" src="assets/js/require.js"></script>
+</head>
+<body>
+<div class="container">
+	<header id="main-header">
+        <h1>Marvel: War of Heroes Battle Simulator</h1>
+        <p>Welcome to the Marvel War of Heroes battle simulator. Feel free to use the tools below to help realize your potential!</p>
+   		<p>Low bandwidth? Prying eyes? Try the <a href="incognito.html"><span style="color: #3CF;">version</span></a>.</p>
+    </header>    
+    <span class="minified">As in actual gameplay, the top card is the center card.</span> 
+    <section id="decks">
+        <section id="offense">
+            <header>
+                <h3>Offensive Deck</h3>
+            </header>            
+            <section class="presets">  		
+                <select id="off-presets">
+                    <option>Select Custom Preset...</option>
+                    <!-- populated dynamically -->
+                </select>
+                <button>Delete Preset</button>
+            </section>            
+            <section class="deck-filter">
+                <span class="minified">Filter All Cards:</span>
+                <select id="off-alignment">
+                    <option value="All">All</option>
+                    <option value="Bruiser">Bruiser</option>
+                    <option value="Speed">Speed</option>
+                    <option value="Tactics">Tactics</option>
+                </select>
+                <select id="off-rarity">
+                    <option value="All">All</option>
+                    <option value="SSR+">SSR+</option>
+                    <option value="SSR">SSR</option>
+                    <option value="UR+">UR+</option>
+                    <option value="UR">UR</option>
+                    <option value="LG">LG</option>
+					<option value="ULG">ULG</option>
+                </select>
+            </section>           
+            <section class="deck">     
+                <div id="oc1">
+                	<div class="card-select">
+                        <input type="checkbox" checked />
+                        <select class="card">
+    						<!-- Dynamically Populated -->
+                        </select>
+                        <select class="skill">
+                            <option value="1">Sk. 1</option>
+                            <option value="2">Sk. 2</option>
+                            <option value="3">Sk. 3</option>
+                            <option value="4">Sk. 4</option>
+                            <option value="5">Sk. 5</option>
+                            <option value="6">Sk. 6</option>
+                            <option value="7">Sk. 7</option>
+                            <option value="8">Sk. 8</option>
+                            <option value="9">Sk. 9</option>
+                            <option value="10">Sk. 10</option>
+                        </select>
+                        <div class="down-arrow"></div>
+                        <div class="up-arrow"></div>
+                    </div>
+                    <div class="card-filter">
+                        <select class="alignment-filter">
+                            <option value="All">All</option>
+                            <option value="Bruiser">Bruiser</option>
+                            <option value="Speed">Speed</option>
+                            <option value="Tactics">Tactics</option>
+                        </select>
+                        <select class="rarity-filter">
+                            <option value="All">All</option>
+                            <option value="SSR+">SSR+</option>
+                            <option value="SSR">SSR</option>
+                            <option value="UR+">UR+</option>
+                            <option value="UR">UR</option>
+                            <option value="LG">LG</option>
+							<option value="ULG">ULG</option>
+                        </select>
+                    </div>
+                    <span class="card-stats"></span>
+                </div>      
+                <div id="oc2">
+					<div class="card-select">
+                        <input type="checkbox" checked />
+                        <select class="card">
+    						<!-- Dynamically Populated -->
+                        </select>
+                        <select class="skill">
+                            <option value="1">Sk. 1</option>
+                            <option value="2">Sk. 2</option>
+                            <option value="3">Sk. 3</option>
+                            <option value="4">Sk. 4</option>
+                            <option value="5">Sk. 5</option>
+                            <option value="6">Sk. 6</option>
+                            <option value="7">Sk. 7</option>
+                            <option value="8">Sk. 8</option>
+                            <option value="9">Sk. 9</option>
+                            <option value="10">Sk. 10</option>
+                        </select>
+                        <div class="down-arrow"></div>
+                        <div class="up-arrow"></div>
+                    </div>
+                    <div class="card-filter">
+                        <select class="alignment-filter">
+                            <option value="All">All</option>
+                            <option value="Bruiser">Bruiser</option>
+                            <option value="Speed">Speed</option>
+                            <option value="Tactics">Tactics</option>
+                        </select>
+                        <select class="rarity-filter">
+                            <option value="All">All</option>
+                            <option value="SSR+">SSR+</option>
+                            <option value="SSR">SSR</option>
+                            <option value="UR+">UR+</option>
+                            <option value="UR">UR</option>
+                            <option value="LG">LG</option>
+							<option value="ULG">ULG</option>
+                        </select>
+                    </div>
+                    <span class="card-stats"></span>
+                </div>       
+                <div id="oc3">
+					<div class="card-select">
+                        <input type="checkbox" checked />
+                        <select class="card">
+    						<!-- Dynamically Populated -->
+                        </select>
+                        <select class="skill">
+                            <option value="1">Sk. 1</option>
+                            <option value="2">Sk. 2</option>
+                            <option value="3">Sk. 3</option>
+                            <option value="4">Sk. 4</option>
+                            <option value="5">Sk. 5</option>
+                            <option value="6">Sk. 6</option>
+                            <option value="7">Sk. 7</option>
+                            <option value="8">Sk. 8</option>
+                            <option value="9">Sk. 9</option>
+                            <option value="10">Sk. 10</option>
+                        </select>
+                        <div class="down-arrow"></div>
+                        <div class="up-arrow"></div>
+                    </div>
+                    <div class="card-filter">
+                        <select class="alignment-filter">
+                            <option value="All">All</option>
+                            <option value="Bruiser">Bruiser</option>
+                            <option value="Speed">Speed</option>
+                            <option value="Tactics">Tactics</option>
+                        </select>
+                        <select class="rarity-filter">
+                            <option value="All">All</option>
+                            <option value="SSR+">SSR+</option>
+                            <option value="SSR">SSR</option>
+                            <option value="UR+">UR+</option>
+                            <option value="UR">UR</option>
+                            <option value="LG">LG</option>
+							<option value="ULG">ULG</option>
+                        </select>
+                    </div>
+                    <span class="card-stats"></span>
+                </div>       
+                <div id="oc4" class="deck-card">
+                    <div class="card-select">
+                        <input type="checkbox" />
+                        <select class="card">
+    						<!-- Dynamically Populated -->
+                        </select>
+                        <select class="skill">
+                            <option value="1">Sk. 1</option>
+                            <option value="2">Sk. 2</option>
+                            <option value="3">Sk. 3</option>
+                            <option value="4">Sk. 4</option>
+                            <option value="5">Sk. 5</option>
+                            <option value="6">Sk. 6</option>
+                            <option value="7">Sk. 7</option>
+                            <option value="8">Sk. 8</option>
+                            <option value="9">Sk. 9</option>
+                            <option value="10">Sk. 10</option>
+                        </select>
+                        <div class="down-arrow"></div>
+                        <div class="up-arrow"></div>
+                    </div>
+                    <div class="card-filter">
+                        <select class="alignment-filter">
+                            <option value="All">All</option>
+                            <option value="Bruiser">Bruiser</option>
+                            <option value="Speed">Speed</option>
+                            <option value="Tactics">Tactics</option>
+                        </select>
+                        <select class="rarity-filter">
+                            <option value="All">All</option>
+                            <option value="SSR+">SSR+</option>
+                            <option value="SSR">SSR</option>
+                            <option value="UR+">UR+</option>
+                            <option value="UR">UR</option>
+                            <option value="LG">LG</option>
+							<option value="ULG">ULG</option>
+                        </select>
+                    </div>
+                    <span class="card-stats"></span>
+                </div>        
+                <div id="oc5" class="deck-card">
+                    <div class="card-select">
+                        <input type="checkbox" />
+                        <select class="card">
+    						<!-- Dynamically Populated -->
+                        </select>
+                        <select class="skill">
+                            <option value="1">Sk. 1</option>
+                            <option value="2">Sk. 2</option>
+                            <option value="3">Sk. 3</option>
+                            <option value="4">Sk. 4</option>
+                            <option value="5">Sk. 5</option>
+                            <option value="6">Sk. 6</option>
+                            <option value="7">Sk. 7</option>
+                            <option value="8">Sk. 8</option>
+                            <option value="9">Sk. 9</option>
+                            <option value="10">Sk. 10</option>
+                        </select>
+                        <div class="down-arrow"></div>
+                        <div class="up-arrow"></div>
+                    </div>
+                    <div class="card-filter">
+                        <select class="alignment-filter">
+                            <option value="All">All</option>
+                            <option value="Bruiser">Bruiser</option>
+                            <option value="Speed">Speed</option>
+                            <option value="Tactics">Tactics</option>
+                        </select>
+                        <select class="rarity-filter">
+                            <option value="All">All</option>
+                            <option value="SSR+">SSR+</option>
+                            <option value="SSR">SSR</option>
+                            <option value="UR+">UR+</option>
+                            <option value="UR">UR</option>
+                            <option value="LG">LG</option>
+							<option value="ULG">ULG</option>
+                        </select>
+                    </div>
+                    <span class="card-stats"></span>
+                </div>       
+            </section>              
+            <section class="deck-options">
+            	<div class="option">
+                	<span id="total_offense">
+                    	<label>Total Offense:</label>
+                        <input id="total-offense" type="text" disabled />
+                    </span>
+                </div>
+            	<div class="option">
+                    <label>Adapter Reaction:</label>
+                    <select id="off-adapter">
+                    	<option value="No">None</option>
+                    	<option value="1.05">Level 1</option>
+                        <option value="1.06">Level 2</option>
+                        <option value="1.07" selected>Level 3</option>
+                    </select>
+                </div>
+                <div class="option">
+                    <label>Alliance Position Effect:</label>
+                    <select id="off-position">
+                        <option value="1">Alliance Member</option>
+                        <option value="1.05">Vice Leader</option>
+                        <option value="1.1">Offense Leader</option>
+                        <option value="1.1">Alliance Leader</option>
+                    </select>
+                </div>
+                <div class="option">
+                    <label>Scrapper:</label>
+                    <select id="scrapper">
+                        <option value="1">No</option>
+                        <option value="1.1">10%</option>
+                        <option value="1.21">21%</option>
+                        <option value="1.3">30%</option>
+                    </select>
+                </div>
+                <div class="option">
+                	<label>Special Combo</label>
+                    <input id="off-combo" type="checkbox" checked />
+                </div>
+                <div class="option">
+                	<span class="combo"></span>
+                </div>
+            </section>                   
+            <section class="deck-management">
+                <button id="save-offense">Save this Deck.</button>
+                <button id="update-offense">Update this Deck.</button>
+            </section>                  
+        </section>          
+    	<section id="defense">
+            <header>
+                <h3>Defensive Deck</h3>
+            </header>            
+            <section class="presets">
+                <select id="def-presets">
+                    <option>Select Custom Preset...</option>
+                    <!-- populated dynamically -->
+                </select>
+                <button>Delete Preset</button>
+            </section>            
+            <section class="deck-filter">
+                <span class="minified">Filter All Cards:</span>
+                <select id="def-alignment">
+                    <option value="All">All</option>
+                    <option value="Bruiser">Bruiser</option>
+                    <option value="Speed">Speed</option>
+                    <option value="Tactics">Tactics</option>
+                </select>
+                <select id="def-rarity">
+                    <option value="All">All</option>
+                    <option value="SSR+">SSR+</option>
+                    <option value="SSR">SSR</option>
+                    <option value="UR+">UR+</option>
+                    <option value="UR">UR</option>
+                    <option value="LG">LG</option>
+					<option value="ULG">ULG</option>
+                </select>
+           </section>          
+           <section class="deck">       
+                <div id="dc1">
+					<div class="card-select">
+                        <input type="checkbox" checked />
+                        <select class="card">
+    						<!-- Dynamically Populated -->
+                        </select>
+                        <select class="skill">
+                            <option value="1">Sk. 1</option>
+                            <option value="2">Sk. 2</option>
+                            <option value="3">Sk. 3</option>
+                            <option value="4">Sk. 4</option>
+                            <option value="5">Sk. 5</option>
+                            <option value="6">Sk. 6</option>
+                            <option value="7">Sk. 7</option>
+                            <option value="8">Sk. 8</option>
+                            <option value="9">Sk. 9</option>
+                            <option value="10">Sk. 10</option>
+                        </select>
+                        <div class="down-arrow"></div>
+                        <div class="up-arrow"></div>
+                    </div>
+                    <div class="card-filter">
+                        <select class="alignment-filter">
+                            <option value="All">All</option>
+                            <option value="Bruiser">Bruiser</option>
+                            <option value="Speed">Speed</option>
+                            <option value="Tactics">Tactics</option>
+                        </select>
+                        <select class="rarity-filter">
+                            <option value="All">All</option>
+                            <option value="SSR+">SSR+</option>
+                            <option value="SSR">SSR</option>
+                            <option value="UR+">UR+</option>
+                            <option value="UR">UR</option>
+                            <option value="LG">LG</option>
+							<option value="ULG">ULG</option>
+                        </select>
+                    </div>
+                    <span class="card-stats"></span>
+                </div>      
+                <div id="dc2">
+					<div class="card-select">
+                        <input type="checkbox" checked />
+                        <select class="card">
+    						<!-- Dynamically Populated -->
+                        </select>
+                        <select class="skill">
+                            <option value="1">Sk. 1</option>
+                            <option value="2">Sk. 2</option>
+                            <option value="3">Sk. 3</option>
+                            <option value="4">Sk. 4</option>
+                            <option value="5">Sk. 5</option>
+                            <option value="6">Sk. 6</option>
+                            <option value="7">Sk. 7</option>
+                            <option value="8">Sk. 8</option>
+                            <option value="9">Sk. 9</option>
+                            <option value="10">Sk. 10</option>
+                        </select>
+                        <div class="down-arrow"></div>
+                        <div class="up-arrow"></div>
+                    </div>
+                    <div class="card-filter">
+                        <select class="alignment-filter">
+                            <option value="All">All</option>
+                            <option value="Bruiser">Bruiser</option>
+                            <option value="Speed">Speed</option>
+                            <option value="Tactics">Tactics</option>
+                        </select>
+                        <select class="rarity-filter">
+                            <option value="All">All</option>
+                            <option value="SSR+">SSR+</option>
+                            <option value="SSR">SSR</option>
+                            <option value="UR+">UR+</option>
+                            <option value="UR">UR</option>
+                            <option value="LG">LG</option>
+							<option value="ULG">ULG</option>
+                        </select>
+                    </div>
+                    <span class="card-stats"></span>
+                </div>       
+                <div id="dc3">
+					<div class="card-select">
+                        <input type="checkbox" checked />
+                        <select class="card">
+    						<!-- Dynamically Populated -->
+                        </select>
+                        <select class="skill">
+                            <option value="1">Sk. 1</option>
+                            <option value="2">Sk. 2</option>
+                            <option value="3">Sk. 3</option>
+                            <option value="4">Sk. 4</option>
+                            <option value="5">Sk. 5</option>
+                            <option value="6">Sk. 6</option>
+                            <option value="7">Sk. 7</option>
+                            <option value="8">Sk. 8</option>
+                            <option value="9">Sk. 9</option>
+                            <option value="10">Sk. 10</option>
+                        </select>
+                        <div class="down-arrow"></div>
+                        <div class="up-arrow"></div>
+                    </div>
+                    <div class="card-filter">
+                        <select class="alignment-filter">
+                            <option value="All">All</option>
+                            <option value="Bruiser">Bruiser</option>
+                            <option value="Speed">Speed</option>
+                            <option value="Tactics">Tactics</option>
+                        </select>
+                        <select class="rarity-filter">
+                            <option value="All">All</option>
+                            <option value="SSR+">SSR+</option>
+                            <option value="SSR">SSR</option>
+                            <option value="UR+">UR+</option>
+                            <option value="UR">UR</option>
+                            <option value="LG">LG</option>
+							<option value="ULG">ULG</option>
+                        </select>
+                    </div>
+                    <span class="card-stats"></span>
+                </div>       
+                <div id="dc4" class="deck-card">
+                    <div class="card-select">
+                        <input type="checkbox" />
+                        <select class="card">
+    						<!-- Dynamically Populated -->
+                        </select>
+                        <select class="skill">
+                            <option value="1">Sk. 1</option>
+                            <option value="2">Sk. 2</option>
+                            <option value="3">Sk. 3</option>
+                            <option value="4">Sk. 4</option>
+                            <option value="5">Sk. 5</option>
+                            <option value="6">Sk. 6</option>
+                            <option value="7">Sk. 7</option>
+                            <option value="8">Sk. 8</option>
+                            <option value="9">Sk. 9</option>
+                            <option value="10">Sk. 10</option>
+                        </select>
+                        <div class="down-arrow"></div>
+                        <div class="up-arrow"></div>
+                    </div>
+                    <div class="card-filter">
+                        <select class="alignment-filter">
+                            <option value="All">All</option>
+                            <option value="Bruiser">Bruiser</option>
+                            <option value="Speed">Speed</option>
+                            <option value="Tactics">Tactics</option>
+                        </select>
+                        <select class="rarity-filter">
+                            <option value="All">All</option>
+                            <option value="SSR+">SSR+</option>
+                            <option value="SSR">SSR</option>
+                            <option value="UR+">UR+</option>
+                            <option value="UR">UR</option>
+                            <option value="LG">LG</option>
+							<option value="ULG">ULG</option>
+                        </select>
+                    </div>
+                    <span class="card-stats"></span>
+                </div>        
+                <div id="dc5" class="deck-card">
+                    <div class="card-select">
+                        <input type="checkbox" />
+                        <select class="card">
+    						<!-- Dynamically Populated -->
+                        </select>
+                        <select class="skill">
+                            <option value="1">Sk. 1</option>
+                            <option value="2">Sk. 2</option>
+                            <option value="3">Sk. 3</option>
+                            <option value="4">Sk. 4</option>
+                            <option value="5">Sk. 5</option>
+                            <option value="6">Sk. 6</option>
+                            <option value="7">Sk. 7</option>
+                            <option value="8">Sk. 8</option>
+                            <option value="9">Sk. 9</option>
+                            <option value="10">Sk. 10</option>
+                        </select>
+                        <div class="down-arrow"></div>
+                        <div class="up-arrow"></div>
+                    </div>
+                    <div class="card-filter">
+                        <select class="alignment-filter">
+                            <option value="All">All</option>
+                            <option value="Bruiser">Bruiser</option>
+                            <option value="Speed">Speed</option>
+                            <option value="Tactics">Tactics</option>
+                        </select>
+                        <select class="rarity-filter">
+                            <option value="All">All</option>
+                            <option value="SSR+">SSR+</option>
+                            <option value="SSR">SSR</option>
+                            <option value="UR+">UR+</option>
+                            <option value="UR">UR</option>
+                            <option value="LG">LG</option>
+							<option value="ULG">ULG</option>
+                        </select>
+                    </div>
+                    <span class="card-stats"></span>
+                </div>       
+            </section>              
+            <section class="deck-options">
+            	<div class="option">
+                	<label>Total Defense</label>
+                    <input id="total-defense" type="text" disabled />
+                </div>
+            	<div class="option">
+                	<label>Adapter Reaction</label>
+                    <select id="def-adapter">
+                    	<option value="No">None</option>
+                    	<option value="1.05">Level 1</option>
+                        <option value="1.06">Level 2</option>
+                        <option value="1.07" selected>Level 3</option>
+                    </select>
+                </div>
+                <div class="option">
+                	<label>Alliance Position Effect</label>
+                    <select id="def-position">
+                        <option value="1">Alliance Member</option>
+                        <option value="1.05">Vice Leader</option>
+                        <option value="1.1">Defense Leader</option>
+                        <option value="1.1">Alliance Leader</option>
+                    </select>
+                </div>
+                <div class="option">
+                	<label>Special Combo</label>
+                    <input id="def-combo" type="checkbox" checked />
+                </div>
+                <div class="option">
+                
+                </div>
+                <div class="option">
+                	<span class="combo"></span>
+                </div> 
+            </section>                 
+            <section class="deck-management">
+                <button id="save-defense">Save this Deck.</button>
+                <button id="update-defense">Update this Deck.</button>
+            </section>                  
+        </section>
+        <div class="clear"></div>
+    </section>    
+    <section id="fixed-results">
+    	<header>
+        	<h3>Fixed Battle Results</h3>
+        </header>
+        <div>
+        	<span id="off-result"></span>
+            <span id="off-log"></span>
+        </div>
+        <div>
+        	<span id="def-result"></span>
+            <span id="def-log"></span>
+        </div>
+    </section>    
+    <section id="automated-results">
+    	<header>
+        	<h3>Automated Results</h3>
+        </header>
+        <div>
+        	<section class="overview">
+                <span id="off-percent">0</span>
+                <span class="win-ratio">
+                    <span id="off-wins">0</span>:<span id="def-wins">0</span>
+                </span>
+            </section>
+            <section class="details">
+                <table class="stat-details">
+                    <thead>
+                        <tr><td colspan="2">Attack Details</td></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Average:</td><td><span id="off-average">0</span></td></tr>
+                        <tr><td>Mode:</td><td><span id="off-mode">0</span></td></tr>
+                        <tr><td>Max:</td><td><span id="off-max">0</span></td></tr>
+                        <tr><td>Min:</td><td><span id="off-min">0</span></td></tr>
+                    </tbody>
+                </table> 
+            </section>
+            <section class="details">  
+                <table class="ability-details">
+                    <thead>
+                        <tr><td colspan="4">Ability Details</td></tr>
+                        <tr><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+                    </thead>
+                    <tbody>                      
+                        <tr>
+                            <td><span id="off-none">0</span></td>
+                            <td><span id="off-one">0</span></td>
+                            <td><span id="off-two">0</span></td>
+                            <td><span id="off-three">0</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="card-details">
+                	<thead>
+                    	<tr><td colspan="4">Card Details</td></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="2"><span id="off-one-name">Primary Card</span></td><td colspan="2"><span id="off-one-freq">0</span></td></tr>
+                        <tr><td colspan="2"><span id="off-two-name">Card 2</span></td><td colspan="2"><span id="off-two-freq">0</span></td></tr>
+                        <tr><td colspan="2"><span id="off-three-name">Card 3</span></td><td colspan="2"><span id="off-three-freq">0</span></td></tr>
+                        <tr><td colspan="2"><span id="off-four-name">Card 4</span></td><td colspan="2"><span id="off-four-freq">0</span></td></tr>
+                        <tr><td colspan="2"><span id="off-five-name">Card 5</span></td><td colspan="2"><span id="off-five-freq">0</span></td></tr>
+                    </tbody>
+                </table>
+            </section>       
+        </div>
+        <div>
+        	<section class="overview">
+                <span id="def-percent">0</span>
+                <span class="win-ratio">
+                    <span id="off-losses">0</span>:<span id="def-losses">0</span>
+                </span>
+            </section>
+            <section class="details">
+                <table class="stat-details">
+                    <thead>
+                        <tr><td colspan="2">Defense Details</td></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Average:</td><td><span id="def-average">0</span></td></tr>
+                        <tr><td>Mode:</td><td><span id="def-mode">0</span></td></tr>
+                        <tr><td>Max:</td><td><span id="def-max">0</span></td></tr>
+                        <tr><td>Min:</td><td><span id="def-min">0</span></td></tr>
+                    </tbody>
+                </table> 
+            </section>
+            <section class="details"> 
+                <table class="ability-details">
+                    <thead>
+                        <tr><td colspan="4">Ability Details</td></tr>
+                        <tr><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+                    </thead>
+                    <tbody>                     
+                        <tr>
+                            <td><span id="def-none">0</span></td>
+                            <td><span id="def-one">0</span></td>
+                            <td><span id="def-two">0</span></td>
+                            <td><span id="def-three">0</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="card-details">
+                	<thead>
+                    	<tr><td colspan="4">Card Details</td></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="2"><span id="def-one-name">Primary Card</span></td><td colspan="2"><span id="def-one-freq">0</span></td></tr>
+                        <tr><td colspan="2"><span id="def-two-name">Card 2</span></td><td colspan="2"><span id="def-two-freq">0</span></td></tr>
+                        <tr><td colspan="2"><span id="def-three-name">Card 3</span></td><td colspan="2"><span id="def-three-freq">0</span></td></tr>
+                        <tr><td colspan="2"><span id="def-four-name">Card 4</span></td><td colspan="2"><span id="def-four-freq">0</span></td></tr>
+                        <tr><td colspan="2"><span id="def-five-name">Card 5</span></td><td colspan="2"><span id="def-five-freq">0</span></td></tr>
+                    </tbody>
+                </table>
+            </section>       
+        </div>
+        <div style="float: right; width: auto; text-align: right;"><label>Specify # of Battles: </label><input type="text" id="battleNumbers"></div>
+        <input type="reset" id="takeSample" value="Run Battles" />
+        <input type="reset" id="stopSample" value="Stop" />
+        <input type="reset" id="clearSample" value="Clear Battle History" />
+    </section>
+    <aside id="popup">
+    
+    </aside>
+</div>
+</body>
+</html>

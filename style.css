@@ -1,0 +1,375 @@
+@charset "utf-8";
+
+/* globals */
+body {
+	background-color: #000;
+	background-image: url(assets/images/background-grid.jpg);
+	color: #efefef;
+	font-family: Verdana, Geneva, sans-serif;	
+}
+/* Layout */
+.container {width: 960px; margin-left: auto; margin-right: auto; text-align: left;}
+#main-header {
+	margin-top: 10px;
+	background-color: #333;
+	opacity: 0.9;
+	padding: 20px;	
+}
+#main-header h1 {
+	margin: 0;
+	padding: 0;	
+}
+
+/* Reusable Classes */
+.victory {
+	background: rgba(0,0,0,0.5);
+	border: 1px solid #0c3;
+	color: #0c3;
+	letter-spacing: 3px;
+	font-weight: bold;
+	text-align: center;
+	padding: 10px 0;
+	margin-bottom: 10px;
+}
+.defeat {
+	background: rgba(0,0,0,0.5);
+	border: 1px solid #F00;
+	color: #f00;
+	font-weight: bold;
+	letter-spacing: 3px;
+	text-align: center;
+	padding: 10px 0;
+	margin-bottom: 10px;
+}
+.clear {clear: both;}
+.minified {font-size: 12px;}
+.floatLeft {float: left;}
+
+
+/* Customized Interface Elements */
+
+.card-stats {
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	background: rgba(0,0,0,0.75);
+	border-radius: 10px;
+	padding: 5px;
+	font-size: 0.7em;
+}
+.deck-filter {
+	border: 1px solid #3CC;
+	display: block;
+	margin-bottom: 10px;
+	padding: 4px; 
+	width: 440px;
+}
+
+.deck-filter, .option, #popup {
+	background: #146687; /* Old browsers */
+	background: -moz-linear-gradient(top, #146687 1%, #003751 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#146687), color-stop(100%,#003751)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #146687 1%,#003751 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #146687 1%,#003751 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #146687 1%,#003751 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #146687 1%,#003751 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#146687', endColorstr='#003751',GradientType=0 ); /* IE6-9 */
+	color: #0C3;
+}
+
+.card-filter {
+	bottom: 0px;
+	border-radius: 20px 20px 0 0;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.5), inset 0 -2px 4px rgba(0,0,0,0.75);
+	color: #FFF;
+	position: absolute;
+	right: 0px;
+}
+
+.card-filter select {
+	color: #fff;
+	background-color: #000;	
+}
+
+.option {
+	margin-top: 5px;
+	padding: 10px;
+	min-height: 18px;
+	border: 1px solid #3CC;
+}
+.option input {
+	float: right;
+	position: relative;
+	top: 5px;
+}
+
+.option input[type='text'] {
+	background: transparent;
+	color: #FFF;
+	text-align: right;
+	border: none;
+	position: relative;
+	top: -1px;	
+}
+.option select {
+	float: right;
+	min-width: 150px;
+	position: relative;
+}
+.option label {
+	display: inline-block;
+	width: 40%;
+	font-size: 0.9em;	
+}
+.option label:after {
+	clear: right;
+}
+
+.option .combo {
+	font-size: 0.8em;
+	font-style: italic;
+}
+
+.deck-management {
+	padding-top: 10px;	
+}
+
+button, input[type='reset'] {
+	padding: 5px;
+	letter-spacing: 2px;
+	background: #b6e026; /* Old browsers */
+	background: -moz-linear-gradient(top, #b6e026 0%, #2a7200 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b6e026), color-stop(100%,#2a7200)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #b6e026 0%,#2a7200 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #b6e026 0%,#2a7200 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #b6e026 0%,#2a7200 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #b6e026 0%,#2a7200 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b6e026', endColorstr='#2a7200',GradientType=0 ); /* IE6-9 */
+	color: #FFF;
+	font-weight: bold;
+	border: 0;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+button:active, input[type='reset']:active {
+	background: #2a7200; /* Old browsers */
+	background: -moz-linear-gradient(top, #2a7200 1%, #b6e026 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#2a7200), color-stop(100%,#b6e026)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #2a7200 1%,#b6e026 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #2a7200 1%,#b6e026 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #2a7200 1%,#b6e026 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #2a7200 1%,#b6e026 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a7200', endColorstr='#b6e026',GradientType=0 ); /* IE6-9 */
+}
+
+#offense {
+	margin-right: 10px;	
+}
+
+#offense, #defense {
+	float: left;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 448px;	
+}
+
+#defense:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+}
+
+.deck {
+	padding-top: 10px;
+}
+.deck > div {
+	border: 1px solid #999;
+	color: #FFF;
+	display: block;
+	margin-top: 35px;
+	min-height: 80px;
+	padding: 10px;
+	position: relative;
+	width: 428px;	
+}
+
+.card-select {
+	position: absolute;
+	width: 438px;
+	padding: 5px;
+	height: 20px;
+	left: 0px;
+	top: -30px;
+	background: #ccc;
+}
+
+.card-select select{
+	position: relative;
+	bottom: 3px;
+}
+
+#fixed-results > div, #automated-results > div {
+	float: left;
+	font-family: Tahoma, Geneva, sans-serif;
+	width: 438px;
+	margin-right: 30px;
+	font-size: 0.9em;
+}
+
+#fixed-results > div:nth-child(odd), #automated-results > div:nth-child(odd) {
+	margin-right: 0px;
+}
+
+#fixed-results div > span {
+	display: block;	
+}
+
+#off-log > span, #def-log > span {
+	color: #3C0;
+	display: block;	
+}
+#off-log > span > span, #def-log > span > span {
+	color: #fff; 	
+}
+
+#automated-results table {
+	width: 100%;
+	color: #3c0;
+	background: rgba(255,255,255,0.1);
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.75);
+	margin-bottom: 10px;
+	border-collapse: collapse;
+}
+
+#automated-results table thead {
+	text-align: center;
+}
+
+#automated-results table thead tr:first-child td {
+	font-weight: bold;
+	color: #CCC;
+	background: #000;
+	border-radius: 10px 10px 0 0;
+}
+#automated-results table td {
+	width: 25%;
+	padding: 0 5px;
+}
+#automated-results tbody tr:nth-child(odd) td {
+	background: #555;	
+}
+
+#automated-results table span {
+	color: #fff;
+}
+
+#automated-results .stat-details td + td {
+	text-align: right;
+}
+#automated-results .ability-details thead tr + tr td {
+	color: #3c0;	
+}
+
+#automated-results .ability-details tbody td:nth-child(even) {
+	background: none;
+}
+#automated-results .ability-details tbody td {
+	text-align: center;	
+}
+
+#automated-results .card-details td:first-child span {
+	color: #3c0;
+}
+#automated-results .card-details td + td {
+	text-align: right;
+}
+
+#fixed-results:after,
+#automated-results:after,
+.overview:after,
+#decks:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;	
+}
+
+.presets select {
+	height: 25px;
+	max-width: 80%;
+	width: 70%;
+}
+
+.presets button {
+	width: 28%;
+}
+.presets {
+	padding-bottom: 10px;
+}
+
+#automated-results, #fixed-results {
+	margin-left: 10px;
+	padding: 10px;
+	width: 910px;
+	margin-top: 20px;
+	border: 1px solid #666;
+	background: rgba(47,47,47,0.5);
+}
+
+
+#def-percent, #off-percent {float: left; font-size: 3em; font-weight: bold; color: #0CC; display: block; width: 140px; margin-bottom: 10px; text-align: center; background: rgba(51,204,204,0.3); border: 1px solid #0cc;}
+
+#def-percent:after, #off-percent:after {
+	clear: both;
+	content: "%";
+	font-size: 0.5em;
+	color: #0CC;	
+}
+
+#off-wins, #def-wins {
+	
+}
+
+#popup {
+	text-align: center;
+	display: none;
+	width: 500px;
+	padding-top: 35px;
+	padding-bottom: 35px;
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.5), inset 0px 10px 50px rgba(0,0,0,0.25);
+	border: 1px solid #3cc;
+}
+
+.speedGreen {background-color: #ACDB7D; }
+.bruiserRed {background-color: #E26452; }
+.tacticsBlue {background-color: #729FD8; }
+
+.win-ratio {float: right; font-size: 2em; padding-right: 10px; padding-top: 10px;}
+
+.up-arrow {
+	width: 10px;
+	height: 10px;
+	background-image: url(assets/images/arrows.gif);
+	background-position: 0px 20px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+.up-arrow:hover {
+	background-position: 0px 0px;
+}
+
+.down-arrow {
+	width: 10px;
+	height: 10px;
+	background-image: url(assets/images/arrows.gif);
+	background-position: 0px 30px;
+	position: absolute;
+	top: 10px;
+	right: 20px;
+}
+.down-arrow:hover {
+	background-position: 0px 10px;	
+}
